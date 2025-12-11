@@ -1,0 +1,305 @@
+Run from step 10200 for 10 steps using inputs_2d.ONe
+
+EOS: /home/zingale/development/Microphysics/EOS/helmholtz
+NETWORK: /home/zingale/development/Microphysics/networks/he-burn/ase-iron
+INTEGRATOR: VODE
+SCREENING: chabrier1998
+
+Castro       git describe: 25.10-5-g3a58e12b1
+AMReX        git describe: 25.12-11-gc23d2e158
+Microphysics git describe: 25.12-4-gbeb38e0d
+
+
+----
+
+
+TinyProfiler total time across processes [min...avg...max]: 355.6777 ... 355.6867 ... 355.6988
+
+--------------------------------------------------------------------------------------------
+Name                                         NCalls  Excl. Min  Excl. Avg  Excl. Max   Max %
+--------------------------------------------------------------------------------------------
+Castro::react_state()                            60   252.8003   254.4642   255.5705  71.85%
+Castro::construct_ctu_hydro_source()             60         17      24.13      34.57   9.72%
+check_for_negative_density()                     60      3.075      13.78       21.4   6.02%
+Gravity::fill_multipole_BCs()                    56      11.03      13.95      17.01   4.78%
+FabArray::ParallelCopy_finish()                7335      1.945      9.121      14.05   3.95%
+Castro::computeTemp()                           374      6.081      8.735      12.55   3.53%
+Castro::normalize_species()                     374      3.461      4.977      7.306   2.05%
+Castro::estTimeStep()                            80      4.076      5.492      6.516   1.83%
+Castro::reset_internal_energy(Fab)              486      3.022      4.317      6.354   1.79%
+FabArray::setVal()                             8798     0.7622      1.296      2.851   0.80%
+Castro::do_advance_ctu()                         60      1.327      1.891      2.759   0.78%
+amrex::Copy()                                  2402     0.7721      1.489      2.105   0.59%
+MLPoisson::Fsmooth()                          23880     0.9414       1.37      2.058   0.58%
+FillBoundary_finish()                         26446     0.8251      1.422       1.87   0.53%
+FabArray::ParallelCopy_nowait()                6773     0.4847      1.007      1.778   0.50%
+Amr::InitAmr()                                    1      1.256      1.257      1.257   0.35%
+FabArray::setDomainBndry()                     1145    0.01266     0.5372      1.207   0.34%
+Amr::coarseTimeStep()                            10   0.001222     0.5796     0.9431   0.27%
+Castro::construct_new_gravity_source()           60     0.3423     0.5071     0.7693   0.22%
+Castro::construct_old_gravity_source()          120      0.322     0.4563     0.6761   0.19%
+AmrLevel::derive()                              147     0.2864     0.4584     0.6544   0.18%
+Castro::reflux()                                 10     0.2722     0.4169     0.5902   0.17%
+FillPatchSingleLevel                           1145     0.2022     0.3749     0.5804   0.16%
+FluxRegister::Reflux()                          160     0.1738     0.3152     0.5541   0.16%
+Castro::FluxRegCrseInit                          30     0.1776      0.308     0.4601   0.13%
+MLLinOp::makeSubCommunicator()                  136   0.005934     0.1336     0.4205   0.12%
+MultiFab::contains_nan()                        180     0.1689     0.2426     0.3548   0.10%
+VisMF::Write(FabArray)                           10    0.09855     0.1502     0.2836   0.08%
+AmrLevel::FillPatch()                           789   0.006141     0.0612     0.2747   0.08%
+MLPoisson::Fapply()                            5278     0.1185     0.1743      0.268   0.08%
+Amr::writePlotFile()                              1    0.01152     0.1302     0.2604   0.07%
+Castro::sum_integrated_quantities()               2   0.002272     0.1603     0.2595   0.07%
+Castro::initMFs()                                 7     0.2222     0.2327     0.2357   0.07%
+VisMF::Read()                                     8     0.1524     0.1842     0.2127   0.06%
+MLMG::ResNormInf()                              667    0.03051     0.1103     0.1933   0.05%
+FabArray::Saxpy()                               360     0.0843     0.1281     0.1851   0.05%
+FillBoundary_nowait()                         26446     0.1045      0.145     0.1747   0.05%
+Castro::finalize_do_advance()                    60   0.004913      0.107     0.1511   0.04%
+MLMG::addInterpCorrection()                    2910    0.06516    0.09465     0.1419   0.04%
+amrex::average_down                            3138     0.0572    0.07998     0.1154   0.03%
+Castro::construct_new_source()                  300    0.03407    0.04906    0.06972   0.02%
+MLCellLinOp::applyBC()                        29426    0.03261    0.04712    0.06965   0.02%
+MLMG::solve()                                   136    0.01522    0.03868    0.05654   0.02%
+Amr::restart()                                    1   0.006675    0.02459    0.04769   0.01%
+main()                                            1    0.01129       0.02    0.03244   0.01%
+Castro::finalize_advance()                       30  0.0004432    0.00762     0.0302   0.01%
+Castro::construct_old_source()                  600     0.0145    0.01907    0.02843   0.01%
+Gravity::actual_solve_with_mlmg()               136    0.01618    0.01855    0.02203   0.01%
+FabArray::FillBoundary()                      26446   0.009176    0.01003    0.01301   0.00%
+FillPatchIterator::Initialize                   789   0.004675   0.005908   0.008033   0.00%
+FillPatchTwoLevels                              472   0.004545   0.005882    0.00689   0.00%
+MLCellLinOp::smooth()                          6031   0.005987    0.00635   0.006732   0.00%
+MLCellLinOp::apply()                           5278     0.0015   0.002003   0.004887   0.00%
+Gravity::solve_for_phi()                        120   0.002449    0.00283   0.003827   0.00%
+FabArray::ParallelCopy()                       5789   0.003412   0.003646   0.003772   0.00%
+MLLinOp::defineGrids()                          136   0.002479   0.002703   0.002987   0.00%
+Castro::subcycle_advance_ctu()                   30  0.0005244  0.0008712   0.002881   0.00%
+Amr::regrid()                                     5  0.0005872  0.0009982   0.002863   0.00%
+Gravity::solve_phi_with_mlmg()                  126   0.001418   0.001691   0.001918   0.00%
+Castro::reset_internal_energy(MultiFab)         374   0.001299   0.001511   0.001826   0.00%
+MLMG::mgVcycle()                                640   0.001432   0.001646   0.001794   0.00%
+MLCellLinOp::correctionResidual()              3060   0.001346   0.001464   0.001562   0.00%
+Castro::construct_old_gravity()                  60  0.0003284  0.0005272   0.001558   0.00%
+Castro::initialize_do_advance()                  60   0.001114   0.001242   0.001476   0.00%
+Castro::construct_new_gravity()                  60  0.0003017  0.0004455   0.001248   0.00%
+Castro::clean_state()                           374   0.001047    0.00112   0.001208   0.00%
+MLMG:computeResOfCorrection()                  2910  0.0008306  0.0009236    0.00102   0.00%
+Castro::initialize_advance()                     30  0.0004914  0.0006845  0.0008456   0.00%
+Gravity::GetCrsePhi()                            80  0.0005407  0.0006274  0.0008142   0.00%
+FillPatchIterator::FillFromTwoLevels()          472  0.0006876  0.0007412   0.000798   0.00%
+MLMG::oneIter()                                 490  0.0005877  0.0006721  0.0007556   0.00%
+Gravity::gravity_sync()                          10  0.0005524  0.0006476  0.0007001   0.00%
+MLCellLinOp::solutionResidual()                 742   0.000553  0.0006189  0.0006884   0.00%
+Castro::do_old_sources()                        120  0.0005683  0.0006281  0.0006809   0.00%
+FillPatchIterator::FillFromLevel0()             317  0.0005099  0.0005778  0.0006665   0.00%
+MLMG::mgVcycle_down::0                          490  0.0004858  0.0005295  0.0005684   0.00%
+MLMG::mgVcycle_down::1                          490  0.0004176  0.0004629  0.0005005   0.00%
+Amr::timeStep()                                  30  0.0002655  0.0003192  0.0004353   0.00%
+MLPoisson::define()                             136  0.0002958  0.0003365  0.0003966   0.00%
+Castro::check_for_nan()                         180   0.000295   0.000307  0.0003326   0.00%
+Castro::do_new_sources()                         60  0.0002564  0.0002841  0.0003166   0.00%
+MLMG::computeResidual()                         490  0.0002385  0.0002666  0.0002934   0.00%
+MLLinOp::define()                               136  0.0002446  0.0002717  0.0002887   0.00%
+StateData::restartDoit()                         12  0.0002148   0.000242  0.0002753   0.00%
+MLMG::mgVcycle_up::0                            490  0.0002171  0.0002499  0.0002692   0.00%
+MLMG::mgVcycle_up::1                            490  0.0001959  0.0002165  0.0002405   0.00%
+MLMG::mgVcycle_up::2                            490  0.0001997  0.0002158  0.0002367   0.00%
+AmrLevel::restart()                               2   0.000179   0.000197  0.0002253   0.00%
+Castro::advance()                                30  0.0001199  0.0001438  0.0001885   0.00%
+Castro::derive()                                147  0.0001026   0.000119  0.0001371   0.00%
+Gravity::multilevel_solve_for_new_phi()           6  9.624e-05  0.0001167  0.0001305   0.00%
+Castro::post_restart()                            2  7.458e-05  9.564e-05  0.0001303   0.00%
+Gravity::actual_multilevel_solve()                6   7.95e-05  9.903e-05  0.0001168   0.00%
+Castro::expand_state()                           70  8.317e-05  9.352e-05  0.0001138   0.00%
+Castro::post_regrid()                            10  6.553e-05  7.886e-05  8.984e-05   0.00%
+Castro::post_timestep()                          30  6.341e-05  7.116e-05  8.599e-05   0.00%
+Castro::computeNewDt()                           15  4.359e-05  4.871e-05  5.451e-05   0.00%
+Gravity::solve_for_delta_phi                     10  2.345e-05  2.639e-05  2.952e-05   0.00%
+Amr::init()                                       1   7.75e-07  9.574e-07  1.243e-06   0.00%
+Other                                         75967     0.3129     0.6227      1.003   0.28%
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+Name                                         NCalls  Incl. Min  Incl. Avg  Incl. Max   Max %
+--------------------------------------------------------------------------------------------
+main()                                            1      355.7      355.7      355.7 100.00%
+Amr::coarseTimeStep()                            10        352        352        352  98.97%
+Amr::timeStep()                                  30      349.8      350.1      350.7  98.59%
+Castro::advance()                                30        338        338      338.1  95.05%
+Castro::subcycle_advance_ctu()                   30        335      335.9      336.4  94.58%
+Castro::do_advance_ctu()                         60        335      335.9      336.4  94.58%
+Castro::react_state()                            60      253.9      255.3      256.4  72.08%
+Castro::construct_ctu_hydro_source()             60      40.09      40.99      41.98  11.80%
+Castro::clean_state()                           374      12.59      18.07      26.27   7.39%
+check_for_negative_density()                     60      3.075      13.78       21.4   6.02%
+Castro::computeTemp()                           374      9.104      13.05      18.91   5.32%
+Gravity::solve_phi_with_mlmg()                  126      12.58      15.26       18.2   5.12%
+Gravity::fill_multipole_BCs()                    56      11.05      13.96      17.02   4.78%
+Gravity::solve_for_phi()                        120      11.12       13.8      16.73   4.70%
+FabArray::ParallelCopy()                       5789      4.106      10.36      14.94   4.20%
+FabArray::ParallelCopy_finish()                7335      1.945      9.121      14.05   3.95%
+AmrLevel::FillPatch()                           789      6.926      10.36      13.14   3.69%
+FillPatchIterator::Initialize                   789       5.63       9.31      12.53   3.52%
+FillPatchSingleLevel                           1145      2.876       8.24       12.4   3.49%
+FillPatchIterator::FillFromLevel0()             317       2.25      7.107      11.16   3.14%
+Castro::post_timestep()                          30      7.909      8.257      8.796   2.47%
+Castro::construct_old_gravity()                  60      5.131      6.558      8.542   2.40%
+Castro::construct_new_gravity()                  60      6.197       7.42      8.363   2.35%
+Castro::normalize_species()                     374      3.461      4.977      7.306   2.05%
+Castro::initialize_do_advance()                  60      5.526      6.322      6.663   1.87%
+Castro::reflux()                                 10      6.521      6.588      6.625   1.86%
+Castro::estTimeStep()                            80      4.076      5.492      6.516   1.83%
+Castro::reset_internal_energy(MultiFab)         374      3.023      4.319      6.356   1.79%
+Castro::reset_internal_energy(Fab)              486      3.022      4.317      6.354   1.79%
+Castro::do_old_sources()                        120      4.751      5.438      6.161   1.73%
+FabArray::ParallelCopy_nowait()                6773      3.118      4.721       5.99   1.68%
+Castro::do_new_sources()                         60      2.475      3.575      5.216   1.47%
+Castro::expand_state()                           70      2.748      3.957      4.927   1.39%
+Gravity::actual_solve_with_mlmg()               136      3.692      3.811       4.09   1.15%
+MLMG::solve()                                   136      3.581      3.586       3.59   1.01%
+Castro::finalize_do_advance()                    60      1.663      2.597       3.24   0.91%
+Amr::regrid()                                     5      2.085      2.485      3.149   0.89%
+MLMG::oneIter()                                 490       2.97       3.06      3.141   0.88%
+Castro::computeNewDt()                           15      2.009      2.673      3.073   0.86%
+Castro::post_regrid()                            10      1.999      2.399      3.066   0.86%
+MLMG::mgVcycle()                                640      2.784      2.907      3.011   0.85%
+Gravity::gravity_sync()                          10      2.908       2.95      2.988   0.84%
+FabArray::setVal()                             8798     0.7622      1.296      2.851   0.80%
+Castro::initialize_advance()                     30      1.195      1.713      2.537   0.71%
+MLCellLinOp::smooth()                          6031       2.29      2.346      2.415   0.68%
+FillPatchIterator::FillFromTwoLevels()          472     0.7106       1.66      2.165   0.61%
+FillPatchTwoLevels                              472     0.7098      1.659      2.164   0.61%
+amrex::Copy()                                  2402     0.7721      1.489      2.105   0.59%
+MLPoisson::Fsmooth()                          23880     0.9414       1.37      2.058   0.58%
+FluxRegister::Reflux()                          160     0.3807     0.9297      2.036   0.57%
+FabArray::FillBoundary()                      26446      1.007      1.583      2.017   0.57%
+FillBoundary_finish()                         26446     0.8251      1.422       1.87   0.53%
+MLCellLinOp::applyBC()                        29426      0.443      1.265      1.791   0.50%
+amrex::average_down                            3138    0.09092     0.7121      1.755   0.49%
+Amr::writePlotFile()                              1      1.507      1.507      1.507   0.42%
+Gravity::multilevel_solve_for_new_phi()           6      1.472      1.473      1.473   0.41%
+Gravity::actual_multilevel_solve()                6      1.472      1.472      1.473   0.41%
+Castro::derive()                                147      1.159       1.25      1.311   0.37%
+AmrLevel::derive()                              147      1.159       1.25      1.311   0.37%
+Amr::InitAmr()                                    1      1.256      1.257      1.257   0.35%
+FabArray::setDomainBndry()                     1145    0.01266     0.5372      1.207   0.34%
+MLMG::mgVcycle_down::0                          490        0.8     0.9323      1.058   0.30%
+Castro::construct_new_source()                  300     0.4225      0.632     0.9604   0.27%
+MLMG::mgVcycle_up::0                            490     0.7322     0.8293     0.9134   0.26%
+Gravity::solve_for_delta_phi                     10      0.892     0.9006     0.9077   0.26%
+Castro::construct_old_source()                  600     0.3973     0.5772     0.8596   0.24%
+Castro::construct_new_gravity_source()           60     0.3423     0.5071     0.7693   0.22%
+Gravity::GetCrsePhi()                            80    0.01707     0.3821     0.7321   0.21%
+Amr::init()                                       1     0.7157     0.7164     0.7176   0.20%
+Amr::restart()                                    1     0.7157     0.7164     0.7176   0.20%
+Castro::construct_old_gravity_source()          120      0.322     0.4563     0.6761   0.19%
+MLCellLinOp::apply()                           5278      0.381     0.4499     0.5229   0.15%
+Castro::finalize_advance()                       30     0.3806     0.4333       0.51   0.14%
+Castro::FluxRegCrseInit                          30     0.3787     0.4238     0.5079   0.14%
+MLMG::mgVcycle_down::1                          490     0.3092      0.402     0.4963   0.14%
+MLPoisson::define()                             136    0.04986     0.1735      0.458   0.13%
+MLLinOp::define()                               136   0.009652     0.1377     0.4249   0.12%
+MLLinOp::defineGrids()                          136   0.009408     0.1374     0.4246   0.12%
+MLLinOp::makeSubCommunicator()                  136   0.005934     0.1336     0.4205   0.12%
+Castro::check_for_nan()                         180     0.1692     0.2429     0.3551   0.10%
+MultiFab::contains_nan()                        180     0.1689     0.2426     0.3548   0.10%
+MLCellLinOp::correctionResidual()              3060     0.2226     0.2771     0.3239   0.09%
+VisMF::Write(FabArray)                           10    0.09855     0.1502     0.2836   0.08%
+Castro::post_restart()                            2     0.2575     0.2664     0.2781   0.08%
+Castro::sum_integrated_quantities()               2     0.0364     0.1833     0.2748   0.08%
+MLPoisson::Fapply()                            5278     0.1185     0.1743      0.268   0.08%
+MLCellLinOp::solutionResidual()                 742     0.2218     0.2453     0.2621   0.07%
+MLMG:computeResOfCorrection()                  2910     0.2163     0.2348     0.2521   0.07%
+MLMG::mgVcycle_up::1                            490     0.2011      0.226     0.2486   0.07%
+Castro::initMFs()                                 7      0.225     0.2347     0.2377   0.07%
+AmrLevel::restart()                               2     0.1628     0.1898     0.2233   0.06%
+MLMG::ResNormInf()                              667    0.08993     0.1502     0.2212   0.06%
+MLMG::addInterpCorrection()                    2910     0.1524     0.1946     0.2211   0.06%
+StateData::restartDoit()                         12     0.1532     0.1849     0.2137   0.06%
+VisMF::Read()                                     8     0.1524     0.1842     0.2127   0.06%
+FabArray::Saxpy()                               360     0.0843     0.1281     0.1851   0.05%
+FillBoundary_nowait()                         26446     0.1103     0.1511      0.181   0.05%
+MLMG::mgVcycle_up::2                            490    0.07253    0.09663     0.1529   0.04%
+MLMG::computeResidual()                         490     0.1159     0.1333     0.1492   0.04%
+Other                                         75967       1.71      2.424      3.557   1.00%
+--------------------------------------------------------------------------------------------
+
+Unused ParmParse Variables:
+  [TOP]::problem.core_XC12(nvals = 1)  :: [0.0]
+  [TOP]::problem.core_XNe20(nvals = 1)  :: [0.3]
+  [TOP]::problem.core_XO16(nvals = 1)  :: [0.7]
+
+Async Memory Usage:
+--------------------------------------------------------------------------------------------------------------------
+Name                                  Nalloc  AvgMem min  AvgMem avg  AvgMem max  MaxMem min  MaxMem avg  MaxMem max
+--------------------------------------------------------------------------------------------------------------------
+Castro::construct_ctu_hydro_source()   10400     323 KiB     788 KiB    1286 KiB    6984 KiB      12 MiB      13 MiB
+Castro::do_advance_ctu()                1560      21 KiB      33 KiB      42 KiB    2614 KiB    4870 KiB    5192 KiB
+MLCellLinOp::reflux()                   1596       0   B      12   B     101   B      65 KiB     271 KiB    1028 KiB
+--------------------------------------------------------------------------------------------------------------------
+
+Pinned Memory Usage:
+--------------------------------------------------------------------------------------------------------------
+Name                            Nalloc  AvgMem min  AvgMem avg  AvgMem max  MaxMem min  MaxMem avg  MaxMem max
+--------------------------------------------------------------------------------------------------------------
+The_Pinned_Arena::Initialize()       8       0   B       0   B       0   B    8192 KiB    8192 KiB    8192 KiB
+--------------------------------------------------------------------------------------------------------------
+
+Cpu Memory Usage:
+-----------------------------------------------------------------------------------------------------------------------
+Name                                     Nalloc  AvgMem min  AvgMem avg  AvgMem max  MaxMem min  MaxMem avg  MaxMem max
+-----------------------------------------------------------------------------------------------------------------------
+Castro::initMFs()                          1000      64 MiB      95 MiB     147 MiB      79 MiB     105 MiB     151 MiB
+Castro::reflux()                           1360     527 KiB     822 KiB    1270 KiB      56 MiB      87 MiB     139 MiB
+Amr::writePlotFile()                         23     170 KiB     300 KiB     510 KiB      50 MiB      78 MiB     125 MiB
+StateData::restartDoit()                    114      41 MiB      64 MiB     103 MiB      48 MiB      69 MiB     103 MiB
+Castro::swap_state_time_levels()            275      26 MiB      40 MiB      62 MiB      27 MiB      41 MiB      63 MiB
+FillPatchIterator::Initialize              8531     317 KiB     487 KiB     585 KiB      19 MiB      30 MiB      48 MiB
+Castro::initialize_do_advance()             620      14 MiB      22 MiB      35 MiB      19 MiB      30 MiB      48 MiB
+AmrLevel::derive()                         3181      22 KiB      72 KiB     145 KiB      19 MiB      29 MiB      47 MiB
+Castro::FluxRegCrseInit                     900      20 KiB      35 KiB      66 KiB      18 MiB      29 MiB      46 MiB
+FluxRegister::Reflux()                     2400      19 KiB      81 KiB     218 KiB      18 MiB      28 MiB      45 MiB
+FillPatchSingleLevel                       1800      14 KiB      36 KiB      66 KiB      18 MiB      28 MiB      45 MiB
+StateData::define()                         240    2739 KiB    4653 KiB    8051 KiB    5511 KiB    9363 KiB      15 MiB
+Castro::construct_ctu_hydro_source()      10400     323 KiB     788 KiB    1286 KiB    6984 KiB      12 MiB      13 MiB
+Castro::initialize_advance()                310    2915 KiB    4504 KiB    7118 KiB    3753 KiB    5892 KiB    9427 KiB
+Castro::construct_new_source()              620     482   B    1568   B    3584   B    3584 KiB    5600 KiB    8960 KiB
+Castro::construct_old_source()             1240     645   B    2043   B    4568   B    3584 KiB    5600 KiB    8960 KiB
+Castro::buildMetrics()                      354    3671 KiB    5450 KiB    8338 KiB    4539 KiB    6000 KiB    8610 KiB
+MLMG::prepareForSolve()                   31216      30 KiB      46 KiB      73 KiB    3687 KiB    5432 KiB    8315 KiB
+Gravity::gravity_sync()                     920      19 KiB      28 KiB      43 KiB    2320 KiB    3444 KiB    5284 KiB
+Castro::post_restart()                       76    1039 KiB    1626 KiB    2602 KiB    2446 KiB    3498 KiB    5230 KiB
+Castro::do_advance_ctu()                   1560      21 KiB      33 KiB      42 KiB    2614 KiB    4870 KiB    5192 KiB
+FabArray::ParallelCopy_nowait()           63831    2167   B      11 KiB      19 KiB    1025 KiB    2473 KiB    4494 KiB
+Gravity::update_max_rhs()                  1092     116   B     234   B     398   B    1831 KiB    2639 KiB    3948 KiB
+Gravity::multilevel_solve_for_new_phi()     268    1174 KiB    1742 KiB    2670 KiB    1566 KiB    2452 KiB    3923 KiB
+Gravity::get_old_grav_vector()              620     152   B     293   B     543   B    1072 KiB    1683 KiB    2693 KiB
+Gravity::get_new_grav_vector()              850     234   B     446   B     815   B    1072 KiB    1683 KiB    2693 KiB
+MLCellLinOp::defineAuxData()              60686    3643   B    5705   B    9106   B    1058 KiB    1652 KiB    2638 KiB
+Gravity::actual_multilevel_solve()          134    2510   B    3623   B    5536   B     608 KiB     877 KiB    1312 KiB
+Gravity::GetCrsePhi()                      1200     685   B    2240   B    4376   B     520 KiB     813 KiB    1302 KiB
+Gravity::fill_multipole_BCs()              3652    6525   B      17 KiB      39 KiB     513 KiB     801 KiB    1281 KiB
+Gravity::solve_for_phi()                   1240      20 KiB      27 KiB      35 KiB     512 KiB     800 KiB    1280 KiB
+Castro::build_fine_mask()                   165     258 KiB     405 KiB     650 KiB     512 KiB     800 KiB    1280 KiB
+MLCellLinOp::reflux()                      1596       0   B      12   B     101   B      65 KiB     271 KiB    1028 KiB
+amrex::average_down_w_geom                  960      42   B      72   B     125   B     320 KiB     550 KiB     960 KiB
+Castro::Castro()                            160      68 KiB     115 KiB     199 KiB     138 KiB     233 KiB     401 KiB
+FillPatchTwoLevels                         3696       0   B     122   B     280   B       0   B     154 KiB     279 KiB
+MLCellLinOp::defineBC()                    1116       7   B       9   B      12   B      36 KiB      83 KiB     169 KiB
+AmrMesh::MakeNewGrids()                     150       4   B       7   B      13   B      66 KiB     103 KiB     165 KiB
+FillPatchInterp(MF)                        1848       0   B       2   B       9   B       0   B      52 KiB      92 KiB
+Gravity::average_fine_ec_onto_crse_ec()     248       0   B       0   B       0   B      16 KiB      39 KiB      81 KiB
+BndryData::define()                       13824     202   B     304   B     452   B      33 KiB      41 KiB      53 KiB
+MLMG::interpCorrection_1                    588       0   B       0   B       2   B    9248   B      20 KiB      42 KiB
+average_down_faces                          248       0   B       0   B       0   B    8448   B      19 KiB      40 KiB
+amrex::average_down                       14688       0   B      34   B     116   B    8192   B      19 KiB      40 KiB
+FillBoundary_nowait()                    336512      22   B      51   B      76   B    8208   B      16 KiB      24 KiB
+MLMG::addInterpCorrection()               12900       0   B       0   B       0   B    2048   B    3200   B    5120   B
+OwnerMask()                                  75       0   B       0   B       0   B    1296   B    2070   B    3312   B
+MLCGSolver::bicgstab                       2450       0   B       0   B       0   B       0   B     347   B    2776   B
+MLCellLinOp::setLevelBC()                  2560       1   B       1   B       2   B    1152   B    1472   B    1920   B
+TagBoxArray::mapPRD                          75       0   B       0   B       0   B     324   B     517   B     828   B
+MLCellLinOp::applyBC()                   235414       0   B       0   B       0   B       8   B       8   B       8   B
+-----------------------------------------------------------------------------------------------------------------------
+
