@@ -1,4 +1,34 @@
-TinyProfiler total time across processes [min...avg...max]: 247.6363 ... 247.6363 ... 247.6363
+==============================================================================
+ Castro Build Information
+==============================================================================
+build date:    2025-12-11 11:17:49.105879
+build machine: Linux nian 6.17.7-200.fc42.x86_64 #1 SMP PREEMPT_DYNAMIC Sun Nov  2 17:43:34 UTC 2025 x86_64 GNU/Linux
+build dir:     /home/zhi/Github/Castro/Exec/science/Detonation
+AMReX dir:     /home/zhi/Github/amrex
+
+COMP:          gnu
+COMP version:  15.2.1
+
+C++ compiler:  mpicxx
+C++ flags:     -Werror=return-type -g1 -O3 -finline-limit=43210 -pg -std=c++17  -pthread    -DAMREX_TINY_PROFILING -DBL_LAZY -DAMREX_LAZY -DBL_USE_MPI -DAMREX_USE_MPI -DAMREX_MPI_THREAD_MULTIPLE -DBL_NO_FORT -DAMREX_GPU_MAX_THREADS=0 -DBL_SPACEDIM=1 -DAMREX_SPACEDIM=1 -DBL_FORT_USE_UNDERSCORE -DAMREX_FORT_USE_UNDERSCORE -DBL_Linux -DAMREX_Linux -DAMREX_DIMENSION_AGNOSTIC -DNDEBUG -DAMREX_NO_PROBINIT -DOMPI_SKIP_MPICXX -DSPONGE -DREACTIONS -DSDC_EVOLVE_ENERGY -DSHOCK_VAR -DSIMPLIFIED_SDC -DSDC -DNET_LOOP_UNROLL_LEN=4 -DSCREEN_METHOD=SCREEN_METHOD_chabrier1998 -DNEUTRINO_METHOD=NEUTRINO_METHOD_sneut5 -DNSE_NET -DNSE -DAUTODIFF_DEVICE_FUNC=AMREX_GPU_HOST_DEVICE -DALLOW_JACOBIAN_CACHING -DSCREENING -DNEUTRINOS -DNAUX_NET=0 -Itmp_build_dir/s/1d.gnu.TPROF.MPI.SMPLSDC.EXE -I. -I/home/zhi/Github/amrex/Src/Base -I/home/zhi/Github/amrex/Src/Base/Parser -I/home/zhi/Github/amrex/Src/AmrCore -I/home/zhi/Github/amrex/Src/Amr -I/home/zhi/Github/amrex/Src/Boundary -I/home/zhi/Github/Microphysics/util -I/home/zhi/Github/Microphysics/util/autodiff -I/home/zhi/Github/Microphysics/util/gcem/include -I/home/zhi/Github/Microphysics/integration/VODE -I/home/zhi/Github/Microphysics/integration/utils -I/home/zhi/Github/Microphysics/integration -I/home/zhi/Github/Microphysics/screening -I/home/zhi/Github/Microphysics/neutrinos -I./ -I/home/zhi/Github/Castro/Source/driver -I/home/zhi/Github/Castro/Source/hydro -I/home/zhi/Github/Castro/Source/problems -I/home/zhi/Github/Castro/Source/sources -I/home/zhi/Github/Castro/Source/reactions -I/home/zhi/Github/Microphysics/EOS -I/home/zhi/Github/Microphysics/EOS/helmholtz -I/home/zhi/Github/Microphysics/networks/ase -I/home/zhi/Github/Microphysics/EOS -I/home/zhi/Github/Microphysics/networks -I/home/zhi/Github/Microphysics/interfaces -I/home/zhi/Github/Microphysics/constants -I/home/zhi/Github/Microphysics/nse_solver -I/home/zhi/Github/Microphysics/util/hybrj -I/home/zhi/Github/Microphysics/util/approx_math -Itmp_build_dir/castro_sources/1d.gnu.TPROF.MPI.SMPLSDC.EXE -I/home/zhi/Github/amrex/Tools/C_scripts
+
+Fortran comp:  mpif90
+Fortran flags: -g1 -O3 -pg -ffree-line-length-none -fno-range-check -fno-second-underscore -fimplicit-none
+
+Link flags:    -L.
+Libraries:      -L/usr/lib64/openmpi/lib -Wl,-rpath -Wl,/usr/lib64/openmpi/lib -Wl,--enable-new-dtags -lmpi
+
+EOS: /home/zhi/Github/Microphysics/EOS/helmholtz
+NETWORK: /home/zhi/Github/Microphysics/networks/ase
+INTEGRATOR: VODE
+SCREENING: chabrier1998
+
+Castro       git describe: 25.05-92-gc9f724d8e
+AMReX        git describe: 24.10-342-g82fa0de69
+Microphysics git describe: 25.09-34-g88e2cea1
+
+
+    TinyProfiler total time across processes [min...avg...max]: 247.6363 ... 247.6363 ... 247.6363
 
 -------------------------------------------------------------------------------------------
 Name                                        NCalls  Excl. Min  Excl. Avg  Excl. Max   Max %
