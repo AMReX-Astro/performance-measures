@@ -1,0 +1,70 @@
+TinyProfiler total time across processes [min...avg...max]: 247.6363 ... 247.6363 ... 247.6363
+
+-------------------------------------------------------------------------------------------
+Name                                        NCalls  Excl. Min  Excl. Avg  Excl. Max   Max %
+-------------------------------------------------------------------------------------------
+Castro::react_state()                          422   243.0611   243.0611   243.0611  98.15%
+Amr::InitAmr()                                   1       1.39       1.39       1.39   0.56%
+Castro::construct_ctu_hydro_source()           422     0.8485     0.8485     0.8485   0.34%
+Castro::computeTemp()                         1691     0.7502     0.7502     0.7502   0.30%
+Castro::reset_internal_energy(Fab)            3382     0.4999     0.4999     0.4999   0.20%
+Castro::do_advance_ctu()                       422      0.218      0.218      0.218   0.09%
+Castro::subcycle_advance_ctu()                 211    0.01278    0.01278    0.01278   0.01%
+Amr::coarseTimeStep()                          211    0.01104    0.01104    0.01104   0.00%
+Castro::reset_internal_energy(MultiFab)       1691   0.006255   0.006255   0.006255   0.00%
+Castro::clean_state()                         1690   0.003677   0.003677   0.003677   0.00%
+Castro::initialize_do_advance()                422   0.003614   0.003614   0.003614   0.00%
+Amr::timeStep()                                211   0.002915   0.002915   0.002915   0.00%
+Castro::advance()                              211  0.0009005  0.0009005  0.0009005   0.00%
+main()                                           1   0.000734   0.000734   0.000734   0.00%
+Other                                        80006     0.8264     0.8264     0.8264   0.33%
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+Name                                        NCalls  Incl. Min  Incl. Avg  Incl. Max   Max %
+-------------------------------------------------------------------------------------------
+main()                                           1      247.6      247.6      247.6 100.00%
+Amr::coarseTimeStep()                          211      246.2      246.2      246.2  99.41%
+Amr::timeStep()                                211      245.9      245.9      245.9  99.32%
+Castro::advance()                              211      245.6      245.6      245.6  99.19%
+Castro::subcycle_advance_ctu()                 211      245.5      245.5      245.5  99.12%
+Castro::do_advance_ctu()                       422      245.4      245.4      245.4  99.11%
+Castro::react_state()                          422      243.1      243.1      243.1  98.16%
+Castro::clean_state()                         1690       1.41       1.41       1.41   0.57%
+Amr::InitAmr()                                   1       1.39       1.39       1.39   0.56%
+Castro::computeTemp()                         1691      1.256      1.256      1.256   0.51%
+Castro::construct_ctu_hydro_source()           422       1.25       1.25       1.25   0.50%
+Castro::reset_internal_energy(MultiFab)       1691     0.5061     0.5061     0.5061   0.20%
+Castro::reset_internal_energy(Fab)            3382     0.4999     0.4999     0.4999   0.20%
+Castro::initialize_do_advance()                422     0.3561     0.3561     0.3561   0.14%
+Other                                        80006      2.371      2.371      2.371   0.96%
+-------------------------------------------------------------------------------------------
+
+Unused ParmParse Variables:
+  [TOP]::amr.ref_ratio(nvals = 4)  :: [2, 2, 2, 2]
+  [TOP]::amr.regrid_int(nvals = 4)  :: [2, 2, 2, 2]
+  [TOP]::solve_nse_e_mode(nvals = 1)  :: [2]
+
+Pinned Memory Usage:
+---------------------------------------------------------------
+Name                            Nalloc  Nfree  AvgMem    MaxMem
+---------------------------------------------------------------
+The_Pinned_Arena::Initialize()       1      1   0   B  8192 KiB
+---------------------------------------------------------------
+
+Cpu Memory Usage:
+---------------------------------------------------------------------
+Name                                  Nalloc  Nfree   AvgMem   MaxMem
+---------------------------------------------------------------------
+Castro::initMFs()                         12     12  346 KiB  348 KiB
+Amr::writePlotFile()                      26     26  143   B  312 KiB
+StateData::define()                        8      8  248 KiB  249 KiB
+Castro::construct_ctu_hydro_source()    4220   4220  486   B  204 KiB
+Castro::swap_state_time_levels()           6      6  147 KiB  148 KiB
+AmrLevel::derive()                      5784   5784   31   B  120 KiB
+Castro::initialize_do_advance()          844    844  114 KiB  115 KiB
+FillPatchIterator::Initialize           8874   8874   24   B  115 KiB
+Castro::initialize_advance()             422    422   28 KiB   28 KiB
+Castro::buildMetrics()                    12     12   24 KiB   24 KiB
+Castro::do_advance_ctu()                1266   1266   18   B   20 KiB
+---------------------------------------------------------------------
